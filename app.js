@@ -29,7 +29,7 @@ function getDistance(lat1, lon1, lat2, lon2) {
 
 
 
-app.post('/add_School', async (req, res) => {
+app.post('/addSchool', async (req, res) => {
 
     const { name, address, latitude, longitude } = req.body;
 

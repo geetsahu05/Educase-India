@@ -7,8 +7,6 @@ const app = express();
 app.use(express.json());
 
 
-
-
 function getDistance(lat1, lon1, lat2, lon2) {
 
     const toRadians = (degree) => (degree * Math.PI) / 180;
@@ -57,7 +55,7 @@ app.post('/add_School', async (req, res) => {
         res.status(500).json({ error: 'Database error' });
 
     }
-    
+
 });
 
 

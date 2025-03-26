@@ -3,7 +3,11 @@ const express = require('express');
 const db = require('./server');
 const app = express();
 
+
 app.use(express.json());
+
+
+
 
 function getDistance(lat1, lon1, lat2, lon2) {
 
@@ -23,6 +27,7 @@ function getDistance(lat1, lon1, lat2, lon2) {
     return R * c;
 
 }
+
 
 
 
@@ -50,9 +55,12 @@ app.post('/add_School', async (req, res) => {
 
         console.error(error);
         res.status(500).json({ error: 'Database error' });
-        
+
     }
 });
+
+
+
 
 app.get('/listSchools', async (req, res) => {
 
@@ -65,6 +73,7 @@ app.get('/listSchools', async (req, res) => {
     }
 
     try {
+
         const [schools] = await db.query('SELECT * FROM schools');
 
         const userLat = parseFloat(latitude);

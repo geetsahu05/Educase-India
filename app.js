@@ -1,11 +1,9 @@
 require('dotenv').config();
 const express = require('express');
-const db = require('./server'); // Import MySQL connection pool
+const db = require('./server');
 const app = express();
-const cors = require('cors');
 
 app.use(express.json());
-app.use(cors()); 
 
 function getDistance(lat1, lon1, lat2, lon2) {
     const toRadians = (degree) => (degree * Math.PI) / 180;
